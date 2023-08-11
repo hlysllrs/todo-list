@@ -69,7 +69,7 @@ async function show(req, res, next) {
 /* ------------- Update ------------- */
 async function update(req, res, next) {
 	try {
-		const todo = await Todo.findByIdAndUpdate(req.parms.id, req.body, { new: true })
+		const todo = await Todo.findByIdAndUpdate(req.params.id, req.body, { new: true })
 		res.locals.data.todo = todo
 		next()
 	} catch (error) {
